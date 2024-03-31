@@ -80,6 +80,7 @@ class Hestia_Nginx_Cache_Admin
 		add_settings_section('plugin_settings', esc_html__('Plugin Settings', 'hestia-nginx-cache'), [$this, 'plugin_settings_text'], 'hestia-nginx-cache');
 		add_settings_field('plugin_setting_show_purge_button', esc_html__('Show button in the admin bar', 'hestia-nginx-cache'), [$this, 'plugin_setting_show_purge_button'], $this->plugin::NAME, 'plugin_settings');
 		add_settings_field('plugin_setting_purge_button_text', esc_html__('Admin bar button text', 'hestia-nginx-cache'), [$this, 'plugin_setting_purge_button_text'], $this->plugin::NAME, 'plugin_settings');
+		add_settings_field('plugin_setting_automatic_purge', esc_html__('Disable Automatic Purge', 'hestia-nginx-cache'), [$this, 'plugin_setting_automatic_purge'], $this->plugin::NAME, 'plugin_settings');
 	}
 
 	public function validate_options($input)
@@ -158,7 +159,13 @@ class Hestia_Nginx_Cache_Admin
 	public function plugin_setting_show_purge_button()
 	{
 		$options = get_option($this->plugin::NAME);
-		$show_adminbar_button = $this->plugin::$is_configured ? $options["show_adminbar_button"] : false;
+		$show_adminbar_button = false;
+		if( $this->plugin::$is_configured ){
+			if(key_exists('show_adminbar_button', $options)){
+				$show_adminbar_button = $options["show_adminbar_button"];
+			}
+		}
+		$show_adminbar_button = $this->plugin::$is_configured ?  : false;
 		echo '<input id="plugin_setting_show_purge_button" name="' . $this->plugin::NAME . '[show_adminbar_button]" type="checkbox" value="1" ' . checked(1, $show_adminbar_button, false) . ' />';
 	}
 
@@ -167,6 +174,17 @@ class Hestia_Nginx_Cache_Admin
 		$options = get_option($this->plugin::NAME);
 		$adminbar_button_text = $this->plugin::$is_configured ? esc_attr($options["adminbar_button_text"]) : "";
 		echo '<input id="plugin_setting_purge_button_text" placeholder="' . esc_html__('Leave empty for default', 'hestia-nginx-cache') . '" name="' . $this->plugin::NAME . '[adminbar_button_text]" type="text" value="' . $adminbar_button_text . '" />';
+	}
+
+	function plugin_setting_automatic_purge(){
+			$options = get_option($this->plugin::NAME);
+			$disable_automatic_purge = false;
+			if( $this->plugin::$is_configured ){
+				if(key_exists('disable_automatic_purge', $options)){
+					$disable_automatic_purge = $options["disable_automatic_purge"];
+				}
+			}
+			echo '<input id="plugin_setting_automatic_purge" name="' . $this->plugin::NAME . '[disable_automatic_purge]" type="checkbox" value="1" ' . checked(1, $disable_automatic_purge, false) . ' />';
 	}
 
 	public function add_settings_page()

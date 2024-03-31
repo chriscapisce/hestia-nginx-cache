@@ -122,6 +122,9 @@ class Hestia_Nginx_Cache
 		}
 
 		$options = get_option(self::NAME);
+		if(key_exists('disable_automatic_purge', $options)  && $options['disable_automatic_purge'] &&  !$force){
+			return false;
+		}
 
 		// Server credentials
 		$hostname = $options['host'];
