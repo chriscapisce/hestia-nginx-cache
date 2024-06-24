@@ -93,6 +93,10 @@ msgstr "Afficher le bouton dans la barre d'administration"
 msgid "Admin bar button text"
 msgstr "Texte du bouton de la barre d'administration"
 
+#: includes/admin.php:83
+msgid "Disable Automatic Purge"
+msgstr "Désactiver le vidage automatique"
+
 #: includes/admin.php:106
 msgid "Please refer to the plugin's installation guide for information on how to generate an API key."
 msgstr "Veuillez vous référer au guide d'installation de l'extension pour plus d'informations sur la façon de générer une clé API."
