@@ -52,13 +52,11 @@ class Hestia_Nginx_Cache
 		'attachment_updated',
 		'publish_phone',
 		'clean_post_cache',
-		'pingback_post',
 		'comment_post',
 		'edit_comment',
 		'delete_comment',
 		'wp_insert_comment',
 		'wp_set_comment_status',
-		'trackback_post',
 		'transition_post_status',
 		'transition_comment_status',
 		'wp_update_nav_menu',
@@ -122,6 +120,9 @@ class Hestia_Nginx_Cache
 		}
 
 		$options = get_option(self::NAME);
+		if(key_exists('disable_automatic_purge', $options)  && $options['disable_automatic_purge'] &&  !$force){
+			return false;
+		}
 
 		// Server credentials
 		$hostname = $options['host'];
