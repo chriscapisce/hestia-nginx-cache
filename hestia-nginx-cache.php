@@ -10,8 +10,8 @@
  * @wordpress-plugin
  * Plugin Name:       Hestia Nginx Cache
  * Description:       Hestia Nginx Cache Integration for WordPress. Auto-purges the Nginx cache when needed.
- * Plugin URI:				https://github.com/jakobbouchard/hestia-nginx-cache
- * Version:           2.2.5
+ * Plugin URI:        https://github.com/jakobbouchard/hestia-nginx-cache
+ * Version:           2.3.0
  * Requires at least: 4.8
  * Requires PHP:      5.4
  * Author:            Jakob Bouchard
@@ -28,7 +28,7 @@ if (!defined('ABSPATH')) {
 class Hestia_Nginx_Cache
 {
 	public const NAME = 'hestia-nginx-cache';
-	public const VERSION = '2.2.4';
+	public const VERSION = '2.3.0';
 
 	private static $instance = null;
 	public static $plugin_basename = null;
@@ -52,13 +52,11 @@ class Hestia_Nginx_Cache
 		'attachment_updated',
 		'publish_phone',
 		'clean_post_cache',
-		'pingback_post',
 		'comment_post',
 		'edit_comment',
 		'delete_comment',
 		'wp_insert_comment',
 		'wp_set_comment_status',
-		'trackback_post',
 		'transition_post_status',
 		'transition_comment_status',
 		'wp_update_nav_menu',
@@ -122,6 +120,9 @@ class Hestia_Nginx_Cache
 		}
 
 		$options = get_option(self::NAME);
+		if(key_exists('disable_automatic_purge', $options)  && $options['disable_automatic_purge'] &&  !$force){
+			return false;
+		}
 
 		// Server credentials
 		$hostname = $options['host'];

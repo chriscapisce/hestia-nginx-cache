@@ -2,44 +2,44 @@
 # This file is distributed under the GPL v3.
 msgid ""
 msgstr ""
-"Project-Id-Version: Hestia Nginx Cache 2.2.4\n"
+"Project-Id-Version: Hestia Nginx Cache 2.3.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/hestia-nginx-cache\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-02-14T03:00:09+00:00\n"
+"POT-Creation-Date: 2024-06-24T21:41:55+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.10.0\n"
 "X-Domain: hestia-nginx-cache\n"
 
 #. Plugin Name of the plugin
-#: C:\Users\Jakob\Dev\hestia-nginx-cache\hestia-nginx-cache.php
-#: includes/admin.php:175
-#: includes/admin.php:176
-#: includes/admin.php:190
+#: C:\Users\Jakob\Dev\jaap-hst-nginx-cache\hestia-nginx-cache.php
+#: includes/admin.php:193
+#: includes/admin.php:194
+#: includes/admin.php:208
 #: includes/site_health.php:44
 msgid "Hestia Nginx Cache"
 msgstr ""
 
 #. Plugin URI of the plugin
-#: C:\Users\Jakob\Dev\hestia-nginx-cache\hestia-nginx-cache.php
+#: C:\Users\Jakob\Dev\jaap-hst-nginx-cache\hestia-nginx-cache.php
 msgid "https://github.com/jakobbouchard/hestia-nginx-cache"
 msgstr ""
 
 #. Description of the plugin
-#: C:\Users\Jakob\Dev\hestia-nginx-cache\hestia-nginx-cache.php
+#: C:\Users\Jakob\Dev\jaap-hst-nginx-cache\hestia-nginx-cache.php
 msgid "Hestia Nginx Cache Integration for WordPress. Auto-purges the Nginx cache when needed."
 msgstr ""
 
 #. Author of the plugin
-#: C:\Users\Jakob\Dev\hestia-nginx-cache\hestia-nginx-cache.php
+#: C:\Users\Jakob\Dev\jaap-hst-nginx-cache\hestia-nginx-cache.php
 msgid "Jakob Bouchard"
 msgstr ""
 
 #. Author URI of the plugin
-#: C:\Users\Jakob\Dev\hestia-nginx-cache\hestia-nginx-cache.php
+#: C:\Users\Jakob\Dev\jaap-hst-nginx-cache\hestia-nginx-cache.php
 msgid "https://jakobbouchard.dev"
 msgstr ""
 
@@ -89,29 +89,33 @@ msgstr ""
 msgid "Admin bar button text"
 msgstr ""
 
-#: includes/admin.php:106
+#: includes/admin.php:83
+msgid "Disable Automatic Purge"
+msgstr ""
+
+#: includes/admin.php:107
 msgid "Please refer to the plugin's installation guide for information on how to generate an API key."
 msgstr ""
 
-#: includes/admin.php:155
+#: includes/admin.php:156
 msgid "Settings for the plugin."
 msgstr ""
 
-#: includes/admin.php:169
+#: includes/admin.php:176
 msgid "Leave empty for default"
 msgstr ""
 
-#: includes/admin.php:197
-#: includes/admin.php:231
+#: includes/admin.php:215
+#: includes/admin.php:249
 msgid "Purge Nginx Cache"
 msgstr ""
 
-#: includes/admin.php:214
-#: includes/admin.php:255
+#: includes/admin.php:232
+#: includes/admin.php:273
 msgid "The Hestia Nginx Cache could not be purged!"
 msgstr ""
 
-#: includes/admin.php:268
+#: includes/admin.php:286
 msgid "The Hestia Nginx Cache was purged successfully."
 msgstr ""
 
