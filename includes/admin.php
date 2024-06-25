@@ -165,7 +165,6 @@ class Hestia_Nginx_Cache_Admin
 				$show_adminbar_button = $options["show_adminbar_button"];
 			}
 		}
-		$show_adminbar_button = $this->plugin::$is_configured ?  : false;
 		echo '<input id="plugin_setting_show_purge_button" name="' . $this->plugin::NAME . '[show_adminbar_button]" type="checkbox" value="1" ' . checked(1, $show_adminbar_button, false) . ' />';
 	}
 
