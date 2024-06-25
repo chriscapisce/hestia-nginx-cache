@@ -148,3 +148,7 @@ class Hestia_Nginx_Cache
 }
 
 Hestia_Nginx_Cache::get_instance();
+
+if (defined('WP_CLI') && WP_CLI) {
+	include(__DIR__.'/wp-cli.php');
+}
