@@ -134,4 +134,4 @@ msgstr "O plugin não foi configurado"
 
 #: includes/admin.php:83
 msgid "Disable Automatic Purge"
-msgstr ""
+msgstr "Desativar Limpeza Automática"
